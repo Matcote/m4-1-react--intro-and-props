@@ -163,11 +163,18 @@ Convert this JSX snippet to HTML:
 
 ```jsx
 let birthdayCakeImage = "/images/cake.jpg";
+let altText = "birthday cake";
 let age = 10;
 
+//JSX
 <div className="wrapper">
   <img src={birthdayCakeImage} alt={altText} />
   <p>Happy {age}th birthday!</p>
+</div>;
+// HTML
+<div class="wrapper">
+  <img src="/images/cake.jpg" alt="birthday cake" />
+  <p>Happy 10th birthday!</p>
 </div>;
 ```
 
@@ -184,6 +191,13 @@ let agreeToTerms = false;
   </label>
 
   {agreeToTerms && <div>YOUR SOUL BELONGS TO ME MWAHAHAHAHAAAAAAHHHHHH!!!</div>}
+</div>;
+//HTML
+<div>
+  <label for="terms-of-service">
+    <input type="checkbox" id="terms-of-service" checked />I agree to the terms
+  </label>
+  <div>YOUR SOUL BELONGS TO ME MWAHAHAHAHAAAAAAHHHHHH!!!</div>
 </div>;
 ```
 
@@ -251,6 +265,33 @@ const pets = [
     </li>
   </ul>
 </div>;
+
+//HTML
+<div>
+  <h1 class="title">My pets:</h1>
+  <ul>
+    <li>
+      <h2>Bark Obama</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Age</th>
+            <th>Species</th>
+            <th>Breed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3</td>
+            <td>dog</td>
+            <td>Labradoodle</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+</div>;
+// etc...
 ```
 
 ---

@@ -89,11 +89,11 @@ const UserProfile = ({ username, email, bio }) => {
 Make the components reusable by using props.
 
 ```jsx
-function VideoPlayer(props) {
+function VideoPlayer({ videoSrc, videoHeight, videoWidth, videoDescription }) {
   return (
     <div>
-      <video src="http://youtube.com/some-video" width={480} height={300} />
-      <p>Cat playing the piano!!</p>
+      <video src={videoSrc} width={videoWidth} height={videoHeight} />
+      <p>{videoDescription}</p>
     </div>
   );
 }
@@ -102,17 +102,17 @@ function VideoPlayer(props) {
 ---
 
 ```jsx
-function Tweet(props) {
+function Tweet({ name, handle, date, tweet, avatarUrl }) {
   return (
     <div>
-      <Avatar src="/images/bunny.jpg" />
+      <Avatar src={avatarUrl} />
       <div>
         <p>
-          <span className="user-name">Mr. Bunny</span>
-          <span className="handle">@mr-bunny</span>
-          <span className="date">Oct 29th</span>
+          <span className="user-name">{name}</span>
+          <span className="handle">{handle}</span>
+          <span className="date">{date}</span>
         </p>
-        <p>Alfalfa is the best food don't @ me</p>
+        <p>{tweet}</p>
         <div>
           <button>Reply</button>
           <button>Retweet</button>
@@ -128,10 +128,10 @@ function Tweet(props) {
 ---
 
 ```jsx
-function Header(props) {
+function Header({ title, navLinks }) {
   return (
     <header>
-      <h1>My great website</h1>
+      <h1>{title}</h1>
       <nav>
         <a href="/about">About</a>
         <a href="/contact">Contact</a>
@@ -235,18 +235,14 @@ const pets = [
 <div>
   <h1 className="title">My pets:</h1>
   <ul>
-    <PetInfo
-      name={pets[0].name}
-      age={pets[0].age}
-      species={pets[0].species}
-      breed={pets[0].breed}
-    />
-    <PetInfo
-      name={pets[1].name}
-      age={pets[1].age}
-      species={pets[1].species}
-      breed={pets[1].breed}
-    />
+    {pets.map((pet) => (
+      <PetInfo
+        name={pet.name}
+        age={pet.age}
+        species={pet.species}
+        breed={pet.breed}
+      />
+    ))}
   </ul>
 </div>;
 ```
@@ -258,14 +254,9 @@ const forecasts = [4, -3, 1, 9, 4, 2, -6];
 
 <div>
   <h1>Weather forecast for the week ahead:</h1>
-
-  <Day>4 degrees</Day>
-  <Day>-3 degrees</Day>
-  <Day>1 degrees</Day>
-  <Day>9 degrees</Day>
-  <Day>4 degrees</Day>
-  <Day>2 degrees</Day>
-  <Day>-6 degrees</Day>
+  {forecasts.map((temp) => (
+    <Day>{temp} degrees</Day>
+  ))}
 </div>;
 ```
 
@@ -280,8 +271,9 @@ const pizzaToppings = [
 ]
 
 <Pizza>
-  <Topping name="green pepper" />
-  <Topping name="broccoli" />
+  {pizzaToppings
+  .filter(topping => topping.isVegetarian)
+  .map(topping => <Topping name={topping.name} />)}
 </Pizza>
 ```
 
