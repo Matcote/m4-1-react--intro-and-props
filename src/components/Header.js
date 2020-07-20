@@ -3,8 +3,6 @@ import React from "react";
 import "./Header.css";
 
 const Header = ({ participants, currentUser }) => {
-  console.log(participants);
-  console.log(currentUser);
   return (
     <header>
       {participants
