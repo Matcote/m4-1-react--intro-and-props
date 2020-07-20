@@ -11,7 +11,7 @@ const Header = ({ participants, currentUser }) => {
         .filter((element) => element !== currentUser)
         .map((element) => {
           return (
-            <div class="chatAvatar">
+            <div className="chatAvatar">
               <img src={element.avatar} alt={element.username} />
               <span>{element.username}</span>
             </div>
