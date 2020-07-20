@@ -1,0 +1,20 @@
+.chat-message h4 {
+  margin-bottom: 10px;
+  margin-left: 40px;
+}
+.chat-message img {
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  vertical-align: middle;
+}
+.chat-message span {
+  text-align: center;
+  background-color: rgba(128, 128, 128, 0.123);
+  padding: 8px;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+.chat-message {
+  margin-left: 20px;
+}
