@@ -9,4 +9,8 @@
 */
 .chat-stream {
   flex: 1;
+  margin-bottom: 50px;
+  margin-top: 80px;
+  width: 60vw;
+  background-color: rgba(238, 238, 238, 0.507);
 }

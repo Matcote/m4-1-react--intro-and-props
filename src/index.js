@@ -9,12 +9,6 @@ import "./styles.css";
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
-  <div className="bigWrapper">
-    <App
-      currentUser={data.conversation.participants[1]}
-      conversation={data.conversation}
-    />
-    <App currentUser={data.currentUser} conversation={data.conversation} />
-  </div>,
+  <App currentUser={data.currentUser} conversation={data.conversation} />,
   rootElement
 );

@@ -1,6 +1,6 @@
 header {
-  height: 100px;
-  background-color: #f9f9f9;
+  height: 80px;
+  background-color: mediumpurple;
   /* 
     Protip: layering multiple box shadows can create a
     richer shadow effect than just using a single one.
@@ -8,7 +8,14 @@ header {
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15),
     0px 1px 0.5px rgba(0, 0, 0, 0.075);
   display: flex;
-  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  padding: 15px;
+  color: white;
+}
+header span {
+  margin-right: auto;
 }
 
 .chatAvatar {
@@ -26,4 +33,10 @@ header {
 .chatAvatar span {
   margin: 5px 0;
   font-weight: bold;
+}
+svg {
+  margin: 15px;
+}
+#video {
+  margin-left: auto;
 }
